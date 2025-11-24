@@ -1,6 +1,8 @@
 window.onload=function(){
     var add= document.getElementById("add");
     add.onclick = addSquare;
+    var colors = document.getElementById("colors");
+    colors.onclick = changeColor;
     var squareCount = parseInt(Math.random() * 1000) + 30;
     for(let i = 0; i < squareCount; i++){
         addSquare();
@@ -28,3 +30,11 @@ function addSquare(){
     squarearea.appendChild(newSquare); //append newSquare element will happen at the end
  
 }
+
+function changeColor(){
+    var squares = document.querySelectorAll(".square");
+    squares.forEach(square => {
+        square.style.backgroundColor = getRandomColor();
+    });
+}
+
