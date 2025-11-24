@@ -1,4 +1,4 @@
-var topZ = 1;     
+var frontZ = 1;     
 
 window.onload=function(){
     var add= document.getElementById("add");
