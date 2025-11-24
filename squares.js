@@ -30,6 +30,11 @@ function addSquare(){
     newSquare.style.top = parseInt(Math.random()* 251) +"px";
     newSquare.style.backgroundColor = getRandomColor();
     
+    var size = (Math.random()*11 )+ 45;
+    newSquare.style.width = size + "px";
+    newSquare.style.height = size + "px";
+
+
     newSquare.onclick = function(){
         var currenntZ = parseInt(newSquare.style.zIndex) || 0;
         if (currenntZ == frontZ){
