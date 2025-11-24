@@ -1,3 +1,5 @@
+var topZ = 1;     
+
 window.onload=function(){
     var add= document.getElementById("add");
     add.onclick = addSquare;
@@ -27,8 +29,20 @@ function addSquare(){
     newSquare.style.left = parseInt(Math.random()* 651) +"px";
     newSquare.style.top = parseInt(Math.random()* 251) +"px";
     newSquare.style.backgroundColor = getRandomColor();
-    squarearea.appendChild(newSquare); //append newSquare element will happen at the end
- 
+    
+    newSquare.onclick = function(){
+        var currenntZ = parseInt(newSquare.style.zIndex) || 0;
+        if (currenntZ == frontZ){
+            newSquare.remove();
+        }
+        else {
+            frontZ++;
+            newSquare.style.zIndex = frontZ;
+        };
+
+    };
+        squarearea.appendChild(newSquare);
+
 }
 
 function changeColor(){
